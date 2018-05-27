@@ -1,4 +1,9 @@
-L = ['a', 'b', 'c']
+class test:
+    def a(self):
+        return '111'
+    def finda(self):
+        return self.a()
 
-
-print L.pop(0)
+obj = test()
+res = obj.finda()
+print res
