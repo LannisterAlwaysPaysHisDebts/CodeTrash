@@ -24,3 +24,19 @@
 # res = filter(is_sqr, range(1,101))
 # print res
 
+#请利用sorted()高阶函数，实现忽略大小写排序的算法。
+#输入：['bob', 'about', 'Zoo', 'Credit']
+#输出：['about', 'bob', 'Credit', 'Zoo']
+# def sortStr(x, y):
+#     newX = x.lower()
+#     newY = y.lower()
+#     if newX < newY:
+#         return -1
+#     elif newX > newY:
+#         return 1
+#     return 0
+# a = ['bob', 'about', 'Zoo', 'Credit']
+# res = sorted(a, sortStr)
+# print res
+
+
