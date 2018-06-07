@@ -16,7 +16,7 @@ $data = require dirname(__DIR__) . '/hzjc_v4.cfg.php';
 
 foreach ($data as $item) {
     foreach ($item as $value) {
-        $url = $baseUrl . $value['Right'];
+        $url = $baseUrl . urlencode($value['Right']);
         
         $data = \QL\QueryList::get($url)->rules($rule)->query()->getData();
         var_dump($data->all());
