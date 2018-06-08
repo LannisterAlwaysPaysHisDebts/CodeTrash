@@ -204,3 +204,61 @@
 # sorted_ignore_case = functools.partial(sorted, cmp=lambda s1, s2: cmp(s1.upper(), s2.upper()))
 # print sorted_ignore_case(['bob', 'about', 'Zoo', 'Credit'])
 
+
+# import types
+# def fn_get_grade(self):
+#     if self.score >= 80:
+#         return 'A'
+#     if self.score >= 60:
+#         return 'B'
+#     return 'C'
+
+# class Person(object):
+#     def __init__(self, name, score):
+#         self.name = name
+#         self.score = score
+
+# p1 = Person('Bob', 90)
+# p1.get_grade = types.MethodType(fn_get_grade, p1)
+# print(p1.get_grade())
+
+
+#类方法
+# class Person(object):
+#     __count = 0
+#     @classmethod
+#     def how_many(cls):
+#         return cls.__count
+#     def __init__(self, name):
+#         self.name = name
+#         Person.count = Person.count + 1
+
+# print(Person.how_many)
+# p1 = Person('Bob')
+# print(p1.how_many)
+
+#
+# class Person(object):
+#     sex = 'female'
+#     def getInfo(self):
+#         return self.sex
+#     @classmethod
+#     def getDetail(cls):
+#         return cls.sex
+
+# p = Person()
+# p.sex = 'ggg'
+# a = p.getInfo()
+# b = p.getDetail()
+
+#类的继承
+class Person(object):
+    def __init__(self, name, gender):
+        self.name = name
+        self.gender = gender
+
+class Student(Person):
+    def __init__(self, name, gender, score):
+        super(Student, self).__init__(name, gender)
+        self.score = score
+
