@@ -1,7 +1,18 @@
 <?php
 
-$path = __DIR__ . '/file.txt';
+if ($app == 'aaa' || $app == 'bbb' || $app == 'ccc' || $app == 'ddd') {
+    echo 'pass';
+}
 
-$data = 'aaaa' . "\r";
+if ('aaa' == $app || 'bbb' == $app || 'ccc' == $app || 'ddd' == $app) {
+    echo 'pass';
+}
 
-file_put_contents($path, $data, FILE_APPEND);
+if (in_array($app, [
+    'aaa',
+    'bbb',
+    'ccc',
+    'ddd'
+])) {
+    
+}
