@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+# bs的一些基本用法
 from bs4 import BeautifulSoup
 import re
 import sys
@@ -17,24 +18,27 @@ and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
 
+# 创建bs对象
 soup = BeautifulSoup(
     html_doc,
     'html.parser',  #使用的解释器
     #from_encoding='utf-8'
 )
 
+# 找到所有的a标签
 links = soup.find_all('a')
 for L in links:
     print(L)
 
+# 找到 href为xx的a标签
 findNode = soup.find('a', href="http://example.com/lacie")
 print(findNode)
 
+# 找到
 linkNode = soup.find('a', href=re.compile(r"ill"))
 print(linkNode)
 
+# 找到class为 title 的p标签
 pNode = soup.find('p', class_="title")
 print(pNode)
 
-print('🐐🦍🦍🦍🦍')
-sys.exit()
