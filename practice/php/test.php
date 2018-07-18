@@ -1,18 +1,7 @@
 <?php
 
-if ($app == 'aaa' || $app == 'bbb' || $app == 'ccc' || $app == 'ddd') {
-    echo 'pass';
-}
-
-if ('aaa' == $app || 'bbb' == $app || 'ccc' == $app || 'ddd' == $app) {
-    echo 'pass';
-}
-
-if (in_array($app, [
-    'aaa',
-    'bbb',
-    'ccc',
-    'ddd'
-])) {
-    
-}
+$ch = curl_init('http://www.baidu.com');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_exec($ch);
+echo curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);

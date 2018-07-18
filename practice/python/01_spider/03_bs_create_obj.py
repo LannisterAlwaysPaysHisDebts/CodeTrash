@@ -24,7 +24,10 @@ soup = BeautifulSoup(html_doc, 'html.parser')
 # 或者打开特定的html文件: soup = BeautifulSoup(open('index.html'))
 
 # Tag
-print(soup.a.attrs)
+# print(soup.a.attrs)
 
+# DOM操作: 
+for L in soup.p.descendants:
+    print(L)
 
-#
+# find:
