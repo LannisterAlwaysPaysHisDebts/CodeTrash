@@ -22,7 +22,7 @@ print(c2.most_common(3))
 # 情况2, 一个txt文件, 统计里面的词频:
 import re
 
-txt = open('./python/practice/00_practice/01_3.txt').read()
+txt = open('01_3.txt').read()
 
 txt_counter = Counter(re.split('\W+', txt))
 print(txt_counter.most_common(10))
