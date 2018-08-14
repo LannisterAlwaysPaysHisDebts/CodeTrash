@@ -2,11 +2,11 @@
 
 ### 1. 如何在列表, 字典, 集合中根据条件筛选数据
 from random import randint
-import timeit
 
 ### 先随机生成列表
 # 注意, py2.x 使用 xrange()  py3 使用range()
 # range(stop) 或者 range(start, stop [, step])
+# 这里的 _ 下划线 代表 我们不关心的变量, 相当于一个垃圾桶
 data = [randint(-10, 10) for _ in range(10)]
 print(data)
 
