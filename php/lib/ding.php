@@ -1,11 +1,6 @@
 <?php
 /**
- * Author: caoting
- * Date: 10/04/2018
  */
-
-//namespace ding;
-
 
 class ding
 {
@@ -16,7 +11,7 @@ class ding
         $data = [
             'msgtype' => 'text',
             'text' => [
-                'content' => '歪, 傻儿子啥时候来请我吃饭呀'
+                'content' => trim($message),
             ],
         ];
 
@@ -41,8 +36,3 @@ class ding
         return $data;
     }
 }
-
-$d = new ding();
-$res = $d->send('1');
-var_dump($res);
-exit();
