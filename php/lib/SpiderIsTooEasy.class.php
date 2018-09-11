@@ -2,6 +2,7 @@
 /**
  * PHP采集基类
  * 基于: QueryList
+ * 从来没用过
  */
 
 require dirname(dirname(__DIR__)) . '/vendor/autoload.php';

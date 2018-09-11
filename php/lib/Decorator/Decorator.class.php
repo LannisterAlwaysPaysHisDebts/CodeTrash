@@ -1,12 +1,10 @@
 <?php
 /**
- * Decorator for php
+ * php装饰器
  *
- * Author: Ricardo Cao
+ * 目前有个很大的bug, 执行某个类的时候如果该类中有die var_dump 等语句则无法实现, 只能实现标准的 return 
  *
- * Notes:
- *  1. base on Reflection
- *  2. Exception Type: Exception
+ *
  */
 
 class DecoratorException extends Exception
@@ -17,6 +15,15 @@ class DecoratorException extends Exception
     }
 }
 
+/**
+ * Decorator for php
+ *
+ * Author: Ricardo Cao
+ *
+ * Notes:
+ *  1. base on Reflection
+ *  2. Exception Type: Exception
+ */
 abstract class Decorator
 {
     public $modules;
