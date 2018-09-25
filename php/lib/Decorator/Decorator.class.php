@@ -2,7 +2,7 @@
 /**
  * php装饰器
  *
- * 目前有个很大的bug, 执行某个类的时候如果该类中有die var_dump 等语句则无法实现, 只能实现标准的 return 
+ * 目前有个很大的bug, 执行某个类的时候如果该类中有die var_dump 等语句则无法实现, 只能实现标准的 return
  *
  *
  */
@@ -11,7 +11,11 @@ class DecoratorException extends Exception
 {
     public function __construct(string $message = "", int $code = 0, Throwable $previous = null)
     {
-        parent::__construct($message, $code, $previous);
+        if (php_sapi_name() != 'cli') {
+            parent::__construct($message, $code, $previous);
+        } else {
+            exit($message . PHP_EOL);
+        }
     }
 }
 
@@ -59,29 +63,30 @@ abstract class Decorator
 
     /**
      * call method
-     * @return bool
+     *
+     * @throws DecoratorException
      */
     protected function call()
     {
         if (empty($this->modules)) {
-            return false;
+            throw new DecoratorException("Empty Modules");
         }
 
         if (empty($this->name)) {
-            return false;
+            throw new DecoratorException("Empty Name");
         }
 
         if (empty($this->arguments)) {
-            return false;
+            throw new DecoratorException("Empty Arguments");
         }
 
         if (!method_exists($this->modules, $this->name)) {
-            return false;
+            throw new DecoratorException("Method no exists");
         }
 
         $params = $this->getMethodParameter($this->modules, $this->name, $this->arguments);
         if (empty($params)) {
-            return false;
+            throw new DecoratorException("Empty Params");
         }
         $this->arguments = $params;
 

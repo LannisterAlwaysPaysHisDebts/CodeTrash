@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        websocket
+    </title>
+<body>
+    <h1>ws测试: </h1>
+    <script>
+        var wsUrl = "ws://127.0.0.1:9502"
+
+        var websocket = new WebSocket(wsUrl);
+
+        // 实例对象的onopen属性
+        websocket.onopen = function(evt){
+            websocket.send("hello !");
+            console.log("connected swoole success");
+        }
+
+        // 实例化 onmessage
+        websocket.onmessage = function(evt){
+            console.log('ws-server-return-data:' + evt.data);
+        }
+
+        // onclose
+        websocket.onclose = function(evt) {
+            console.log("close");
+        }
+
+        // onerror
+        websocket.onerror = function(evt) {
+            console.log("error:" + evt.data);
+        }
+    </script>
+</body>
+</head>
+</html>

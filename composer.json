@@ -2,5 +2,8 @@
     "require": {
         "jaeger/querylist": "^4.0",
         "phpoffice/phpexcel": "^1.8"
+    },
+    "require-dev": {
+        "eaglewu/swoole-ide-helper": "dev-master"
     }
 }
