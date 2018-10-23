@@ -1,9 +1,0 @@
-<?php
-/**
- * QuickQuery
- *
- */
-
-class query {
-
-}
