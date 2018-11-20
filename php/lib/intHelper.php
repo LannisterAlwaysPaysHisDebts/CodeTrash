@@ -1,4 +1,9 @@
 <?php
+/**
+ * int 数据打包
+ * 
+ */
+
 class intHelper
 {
     public static function int8($i) {

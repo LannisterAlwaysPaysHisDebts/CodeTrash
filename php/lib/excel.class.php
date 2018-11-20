@@ -1,4 +1,10 @@
 <?php
+/**
+ * excel生成
+ * 版本1
+ * 简单封装
+ * 
+ */
 
 class excel
 {
