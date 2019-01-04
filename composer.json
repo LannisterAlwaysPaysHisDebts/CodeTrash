@@ -1,7 +1,9 @@
 {
     "require": {
         "jaeger/querylist": "^4.0",
-        "phpoffice/phpexcel": "^1.8"
+        "phpoffice/phpexcel": "^1.8",
+        "php-ffmpeg/php-ffmpeg": "^0.13.0",
+        "dsiddharth2/php-zxing": "^1.0"
     },
     "require-dev": {
         "eaglewu/swoole-ide-helper": "dev-master"
