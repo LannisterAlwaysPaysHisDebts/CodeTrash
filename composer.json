@@ -4,7 +4,8 @@
         "phpoffice/phpexcel": "^1.8",
         "php-ffmpeg/php-ffmpeg": "^0.13.0",
         "dsiddharth2/php-zxing": "^1.0",
-        "khanamiryan/qrcode-detector-decoder": "^1.0"
+        "khanamiryan/qrcode-detector-decoder": "^1.0",
+        "phpunit/phpunit": "^7.5"
     },
     "require-dev": {
         "eaglewu/swoole-ide-helper": "dev-master"

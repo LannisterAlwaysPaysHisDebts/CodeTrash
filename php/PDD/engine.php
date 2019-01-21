@@ -30,8 +30,7 @@ $obj = new Pdd();
  *
  */
 
-//$url = "https://mobile.yangkeduo.com/goods2.html?goods_id=2067164789&ts=1546431170816&page_from=0&share_uin=7GHF2VHVPWVFOI232YGE4HROFE_GEXDA&refer_share_id=50ea063b8fed4fa990889d85c0d85219&refer_share_uid=3758927828&refer_share_channel=message&from=singlemessage";
-//$url = "https://mobile.yangkeduo.com/goods2.html?goods_id=2569223989";
+//$url = "https://mobile.yangkeduo.com/goods2.html?goods_id=3052170573&ts=1546598030621&page_from=23&share_uin=7GHF2VHVPWVFOI232YGE4HROFE_GEXDA&refer_share_id=41bc35c4dc89431798b139b03cd6cae7&refer_share_uid=3758927828&refer_share_channel=message";
 //
 //$res = $obj->getGoodsIdByUrl($url);
 //
@@ -64,7 +63,7 @@ $obj = new Pdd();
  *
  */
 
-//$url = "https://mobile.yangkeduo.com/goods2.html?goods_id=2067164789&ts=1546431170816&page_from=0&share_uin=7GHF2VHVPWVFOI232YGE4HROFE_GEXDA&refer_share_id=50ea063b8fed4fa990889d85c0d85219&refer_share_uid=3758927828&refer_share_channel=message&from=singlemessage";
+//$url = "https://mobile.yangkeduo.com/goods2.html?goods_id=3052170573&ts=1546598030621&page_from=23&share_uin=7GHF2VHVPWVFOI232YGE4HROFE_GEXDA&refer_share_id=41bc35c4dc89431798b139b03cd6cae7&refer_share_uid=3758927828&refer_share_channel=message";
 //
 //$res = $obj->urlGenerate($url);
 //
@@ -110,7 +109,7 @@ $obj = new Pdd();
  *
  */
 
-$startTime = '2019-01-02 18:00:44';
-$endTime = '2019-01-02 20:59:44';
-$res = $obj->getOrderList($startTime, $endTime);
-var_dump($res);
+//$startTime = '2019-01-02 18:00:44';
+//$endTime = '2019-01-02 20:59:44';
+//$res = $obj->getOrderList($startTime, $endTime);
+//var_dump($res);
