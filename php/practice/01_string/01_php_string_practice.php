@@ -1,7 +1,7 @@
 <?php
 /**
  * 字符串处理练习, 只使用字符串操作函数, 将data.php中字符串的内容提取分块
- * StartTime: 10:31
+ *
  */
 
 $data = require __DIR__ . '/data.php';

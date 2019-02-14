@@ -22,7 +22,7 @@ $imageUrl = $baseUrl . $data['images'][0]['url'];
 $imageName = $data['images'][0]['copyright'];
 $length = strpos($imageName, '(');
 $imageName = substr($imageName, 0, $length);
-$path = __DIR__ . '/' . trim($imageName) . date('Ymd') . '.jpg';
+$path = __DIR__ . 'bing.php/' . trim($imageName) . date('Ymd') . '.jpg';
 
 if (copy($imageUrl, $path)) {
     exit('下载成功');

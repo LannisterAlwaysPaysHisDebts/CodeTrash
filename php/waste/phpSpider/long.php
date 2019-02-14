@@ -58,7 +58,7 @@ try{
 
     $objPHPExcel->setActiveSheetIndex(0);
 
-    $exportFile = __DIR__ . '/' . $title . ".xlsx";
+    $exportFile = __DIR__ . 'long.php/' . $title . ".xlsx";
     $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
     $objWriter->save($exportFile);
 } catch (PHPExcel_Exception $e) {
