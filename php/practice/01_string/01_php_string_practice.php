@@ -46,10 +46,10 @@ function findTag($tag, $data)
         return false;
     }
 
-    do{
-        strpos($startTag, );
+//    do{
+//        strpos($startTag, );
 
-    }while(1);
+//    }while(1);
 
 
 }
