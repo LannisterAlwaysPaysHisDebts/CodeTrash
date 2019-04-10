@@ -15,4 +15,3 @@ echo "请输入字符串: ";
 $a = trim(fgets(STDIN));
 echo "你输入的是: " . $a . "\n";
 
-

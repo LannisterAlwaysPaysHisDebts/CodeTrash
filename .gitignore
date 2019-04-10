@@ -16,3 +16,4 @@ package-lock.json
 a.out
 /venv/
 /static/
+/test
