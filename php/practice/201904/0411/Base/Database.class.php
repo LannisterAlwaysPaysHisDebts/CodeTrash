@@ -1,5 +1,7 @@
 <?php
 /**
+ * 单例模式:
+ * 将构造函数设置为私有,然后创建静态方法getInstance, 创建静态属性$db, return new self();
  *
  *
  *

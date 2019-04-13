@@ -13,16 +13,10 @@ namespace Base;
 
 class MySqlFactory
 {
-    protected static $tree = [];
-
-    public static function createDb($db = 'default_r')
+    public static function createDb()
     {
-        if (isset(self::$tree[$db])) {
-            return self::$tree[$db];
-        }
-
         $obj = Database::getInstance();
-        self::$tree[$db] = $obj;
+        Register::set('db1', $obj);
         return $obj;
     }
 }
