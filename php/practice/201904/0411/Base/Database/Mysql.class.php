@@ -7,7 +7,7 @@
  */
 namespace Base\Database;
 
-class Mysql implements \Base\IDatabase
+class Mysql implements IDatabase
 {
     protected $conn;
 

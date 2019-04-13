@@ -5,9 +5,8 @@
  *
  *
  */
-namespace Base\Database;
 
-class MySQLi implements \Base\IDatabase
+class MySQLi implements IDatabase
 {
     protected $conn;
 

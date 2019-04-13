@@ -12,6 +12,11 @@ spl_autoload_register(function ($class){
     require __DIR__ . "/{$class}.class.php";
 });
 
+$userInvite = \Base\MySqlFactory::getUserInvite(1);
+
+$userInvite->masterUserId = 5;
+$userInvite->appUserId = 6;
+$userInvite->createTime = date('Y-m-d H:i:s');
 
 
 

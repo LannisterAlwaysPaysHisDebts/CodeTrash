@@ -8,8 +8,6 @@
 
 namespace Base\Database;
 
-use Base\IDatabase;
-
 /**
  * Class PDO
  * @package Base\Database
@@ -35,7 +33,7 @@ class PDO implements IDatabase
     /**
      * @param $sql
      *
-     * @return
+     * @return \PDOStatement
      */
     public function query($sql)
     {
