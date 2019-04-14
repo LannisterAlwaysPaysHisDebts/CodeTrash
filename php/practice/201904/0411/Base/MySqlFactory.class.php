@@ -9,9 +9,8 @@
 
 namespace Base;
 
-
-
 use Base\ORM\UserInvite;
+use Base\Database\PDO;
 
 class MySqlFactory
 {
@@ -20,6 +19,17 @@ class MySqlFactory
         $obj = Database::getInstance();
         Register::set('db1', $obj);
         return $obj;
+    }
+
+    public static function getDb()
+    {
+        $db = Register::get("db");
+        if (!$db) {
+            $db = new PDO();
+            $db->connect("127.0.0.1", "root", "root", "testdb");
+            Register::set('db', $db);
+        }
+        return $db;
     }
 
     public static function getUserInvite($id)

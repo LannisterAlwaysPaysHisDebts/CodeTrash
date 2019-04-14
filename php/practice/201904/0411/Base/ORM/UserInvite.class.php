@@ -42,7 +42,8 @@ class UserInvite
 
         $this->db = new PDO();
         $this->db->connect('127.0.0.1', 'root', 'root', 'testdb');
-        $res = $this->db->query("select * from UserInvite where $inviteId");
+        $sql = "select * from UserInvite where InviteId = {$inviteId}";
+        $res = $this->db->query($sql);
         $data = $res->fetch(\PDO::FETCH_ASSOC);
 
         $this->masterUserId = $data['MasterUserId'];

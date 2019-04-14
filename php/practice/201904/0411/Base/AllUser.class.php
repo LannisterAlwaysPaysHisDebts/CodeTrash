@@ -1,7 +1,9 @@
 <?php
 /**
  * 迭代器模式
- * 使用
+ * 继承php自带的Iterator迭代器类
+ *
+ *
  *
  */
 
@@ -15,12 +17,29 @@ namespace Base;
 class AllUser implements \Iterator
 {
     /**
+     * @var
+     */
+    protected $ids;
+    /**
+     * @var array
+     */
+    protected $data = [];
+    /**
+     * @var
+     */
+    protected $index;
+
+    /**
      * AllUser constructor.
+     *
+     * 生成数据
      */
     public function __construct()
     {
-        $db = MySqlFactory::createDb();
-        $db->query();
+        $db = MySqlFactory::getDb();
+        $result = $db->query("select InviteId from UserInvite");
+        $this->ids = $result->fetchAll(\PDO::FETCH_ASSOC);
+        var_dump($this->ids);
     }
 
     /**
@@ -30,7 +49,8 @@ class AllUser implements \Iterator
      */
     public function current()
     {
-        // TODO: Implement current() method.
+        $id = $this->ids[$this->index]['InviteId'];
+        return MySqlFactory::getUserInvite($id);
     }
 
     /**
@@ -38,7 +58,7 @@ class AllUser implements \Iterator
      */
     public function next()
     {
-        // TODO: Implement next() method.
+        $this->index++;
     }
 
     /**
@@ -48,7 +68,7 @@ class AllUser implements \Iterator
      */
     public function valid()
     {
-        // TODO: Implement valid() method.
+        return $this->index < count($this->ids);
     }
 
     /**
@@ -56,7 +76,7 @@ class AllUser implements \Iterator
      */
     public function rewind()
     {
-        // TODO: Implement rewind() method.
+        $this->index = 0;
     }
 
     /**
@@ -66,6 +86,6 @@ class AllUser implements \Iterator
      */
     public function key()
     {
-        // TODO: Implement key() method.
+        return $this->index;
     }
 }
