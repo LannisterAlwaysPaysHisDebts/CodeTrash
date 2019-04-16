@@ -23,7 +23,13 @@ class HttpServer
      */
     public function __construct($host = '0.0.0.0', $port = 9501)
     {
+        // 0.0.0.0 表示监听所有,无论是外网地址还是内网地址还是本机地址
         $this->http = new swoole_http_server($host, $port);
+
+        $this->http->set([
+            'enable_static_handler' => true,
+            'document_root' => '/Users/caoting/notes/myNotes/php/swoole/demo/server/'
+        ]);
     }
 
     /**
@@ -32,11 +38,10 @@ class HttpServer
     public function bind()
     {
         $this->http->on('request', function ($request, $response) {
-            var_dump($request->port);
-            var_dump($response->port);
-
+            $response->cookie("caoting", "xsssss", time() + 20);
             $response->header('Content-Type', "text/html", "charset=utf-8");
-            $response->end('<h1>Hello Swoole. #' . rand(1000, 9999) . "</h1>");
+            $str = "<h1>HTTP Server</h1><h2>Get: " . json_encode($request->get) . "</h2>";
+            $response->end($str);
         });
 
         return $this;

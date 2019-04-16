@@ -24,7 +24,14 @@ class TCPServer
      */
     public function init($host = '127.0.0.1', $port = 9501)
     {
+        //创建Server对象，监听 127.0.0.1:9501端口
         $this->server = new swoole_server($host, $port);
+
+        $this->server->set([
+            'worker_num' => 8, // worker 进程数, 建议设置为cpu核数的1-4倍
+            'max_request' => 10000,
+        ]);
+
         return $this;
     }
 
@@ -40,8 +47,11 @@ class TCPServer
          * callback函数如何在类里面调一个自定义函数, 比如这里的callback第一个第二个参数都是固定要传的
          */
 
-        $this->server->on('connect', function ($serv, $fd) {
-            echo "Client: Connect " . PHP_EOL;
+        //监听连接进入事件
+        // $fd 是客户端连接的唯一标示
+        // $reactor_id 线程id
+        $this->server->on('connect', function ($serv, $fd, $reactor_id) {
+            echo "Client: {$reactor_id} - {$fd} " . PHP_EOL;
         });
         return $this;
     }
@@ -134,7 +144,8 @@ class TCPClient
     public function connect()
     {
         if (!$this->client->connect("127.0.0.1", 9501, 1)) {
-            echo "Error: {$this->client->errMsg}[{$this->client->errCode}]\n";
+            echo "连接失败 Error: {$this->client->errMsg}[{$this->client->errCode}]\n";
+            exit();
         }
 
         fwrite(STDOUT, "请输入消息 Please input msg：");
