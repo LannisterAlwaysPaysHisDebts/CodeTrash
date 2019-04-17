@@ -1,5 +1,7 @@
 <?php
 
+namespace lib;
+
 /**
  * Class eatMongo
  *

@@ -4,6 +4,8 @@
  * 
  */
 
+namespace lib;
+
 class intHelper
 {
     public static function int8($i) {

@@ -6,6 +6,8 @@
  * 
  */
 
+namespace lib;
+
 class ding
 {
     private $webhook_url = 'https://oapi.dingtalk.com/robot/send?access_token=179c2b683d03275bf091d482337b9a50725a1ee9fa947838de486d164dc1f965';

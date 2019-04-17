@@ -4,9 +4,9 @@
  * 
  * 
  */
+namespace lib;
 
 require dirname(dirname(__DIR__)) . '/vendor/autoload.php';
-require __DIR__ . '/ding.php';
 
 class reportIP
 {
