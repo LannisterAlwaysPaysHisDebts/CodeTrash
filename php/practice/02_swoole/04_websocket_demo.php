@@ -20,7 +20,7 @@ class wsServer
 
         $this->ws->on('open', [$this, 'open']);
         $this->ws->on('message', [$this, 'message']);
-        $this->ws->on('task', [$this, 'task']);
+        $this->ws->on('task', [$this, 'onTask']);
         $this->ws->on('finish', [$this, 'onFinish']);
         $this->ws->on('close', [$this, 'onClose']);
     }
@@ -56,7 +56,7 @@ class wsServer
         $ws->task($data);
         swoole_timer_after(5000, function () use ($ws, $frame) {
             echo "5s-after " . PHP_EOL;
-            $ws->push($frame->fd, "server-");
+            $ws->push($frame->fd, "server-time-after");
         });
         $ws->push($frame->fd, "server-push: " . date('Y-m-d'));
 

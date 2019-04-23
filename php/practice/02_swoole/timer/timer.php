@@ -1,4 +1,11 @@
 <?php
+/**
+ * swoole计时器
+ * https://wiki.swoole.com/wiki/page/319.html
+ *
+ *
+ */
+
 // 相当于setInterval，是持续触发的
 swoole_timer_tick(2000, function($timer_id){
     echo "tick-2000-ms\n";
