@@ -1,1 +1,2 @@
-<img src='https://raw.githubusercontent.com/LannisterAlwaysPaysHisDebts/Random-img/master/100.jpg'>
+# codeTrash
+一些代码片段
